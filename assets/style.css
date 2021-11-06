@@ -10,6 +10,17 @@ Reset CSS
 html {
     font-size: 62.5%;
 }
+
+/*
+===========================
+CCS Variables
+===========================
+*/
+:root {
+    --num-columns: 10;
+    --num-rows: 10;
+    --size: 32px;
+}
 /*
 =======================
 Board style
@@ -18,8 +29,8 @@ Board style
 
 .board-element {
     display: grid;
-    grid-template-columns: repeat(4, 32px);
-    grid-template-rows: repeat(3, 32px);
+    grid-template-columns: repeat(var(--num-columns), var(--size));
+    grid-template-rows: repeat(var(--num-rows), var(--size));
 }
 .board-element > div {
     background-color: #bbbbbb;
@@ -28,5 +39,5 @@ Board style
     border-right: 2px solid #a9a9a9;
     border-bottom: 2px solid #a9a9a9;
     text-align: center;
-    line-height: 32px;
+    line-height: var(--size);
 }
